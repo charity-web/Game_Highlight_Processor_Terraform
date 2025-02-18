@@ -64,6 +64,8 @@ terraform plan
 ```
 terraform apply -var-file="terraform.dev.tfvars"
 ```
+![image 1](https://github.com/user-attachments/assets/4c9742e8-138c-435c-a69c-69fefa751134)
+
 6. Create an ECR Repo
 ```
 aws ecr create-repository --repository-name highlight-pipeline
@@ -79,6 +81,9 @@ docker build -t highlight-pipeline:latest .
 docker tag highlight-pipeline:latest <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/highlight-pipeline:latest
 docker push <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/highlight-pipeline:latest
 ```
+![image 2](https://github.com/user-attachments/assets/64f9a09a-9347-4a9d-8f4b-00f2f7cb2190)
+
+
 
 **STEP 3:** Destroy ECS and ECR resources
 
@@ -90,6 +95,9 @@ bash ncaaprojectcleanup.sh
 
 **Review Video Files**
 1. Navigate to the S3 Bucket and confirm there is a json video in the highlights folder and a video in the videos folder
+
+![image 3](https://github.com/user-attachments/assets/60dc515a-a2bd-4d51-9130-67e3c370beef)
+
 
 **What We Learned**
 1. Deploying local docker images to ECR
